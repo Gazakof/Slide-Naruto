@@ -1,0 +1,663 @@
+:root {
+  --green: aqua;
+  --light-color: #d5dee4;
+  --color6: #03a9f4;
+  --grey: #777;
+  --grey2: #464646;
+  --black1: #1d1d1d;
+  --font: #2e2e2e;
+  --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+@font-face {
+  font-family: Roboto-Regular;
+  src: url("/assets/font/Roboto-Regular.ttf");
+}
+* {
+  font-family: "Roboto-Regular", sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-padding-top: 5.5rem;
+  scroll-behavior: smooth;
+  background-color: var(--light-color);
+}
+
+body {
+  padding: 5px;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  background-color: var(--light-color);
+  top: 0;
+  z-index: 999;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbarLogo {
+  padding: 0.5rem 8rem 0 1rem;
+}
+.logo {
+  width: 100px;
+  height: 60px;
+  margin-left: 10px;
+}
+
+header ol {
+  display: inline;
+}
+
+.topbarLinks {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.topbarLink a {
+  text-decoration: none;
+  color: var(--grey2);
+}
+.topbarLink {
+  width: fit-content;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 12px;
+  margin-left: 5%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.topbarLink:hover {
+  color: rgb(43, 40, 40);
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;
+}
+
+#acceuil {
+  display: flex;
+  position: relative;
+  height: fit-content;
+  padding: 2rem 1%;
+}
+
+.creationleft {
+  position: relative;
+  top: 150px;
+  height: 700px;
+  flex: 4;
+}
+.creationright {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  flex: 6;
+  display: flex;
+  justify-content: center;
+}
+
+.creationleftText {
+  width: 55%;
+  margin-top: 25px;
+  margin-left: 30px;
+  color: var(--font);
+}
+.creationleftText p {
+  text-transform: none;
+}
+
+.creationleftH2 {
+  color: var(--color6);
+  margin-left: 30px;
+  margin-top: 20px;
+  font-size: 2rem;
+}
+.creationleftH2 span {
+  font-size: 2.8rem;
+}
+
+.marge {
+  margin-left: 10px;
+}
+
+.descriptionPerso {
+  font-size: 14px;
+  z-index: 1;
+}
+
+.slideContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -100px;
+}
+
+.slideItems {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  list-style-type: none;
+}
+
+.slideItem {
+  position: absolute;
+  width: 30%;
+  height: 60%;
+  top: 15%;
+  left: 50%;
+  cursor: pointer;
+  z-index: 1;
+  transition: 1s cubic-bezier(0.25, 1, 0.25, 1);
+}
+
+.slideItems li::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url(../assets/img/shadow.png);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: 100% auto;
+  transition: 0.3s;
+}
+.slideItems li:hover::after {
+  width: 85%;
+}
+
+.item1 {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  z-index: 2;
+  transform: translateX(-50%) scale(1.5) translate3d(0, 0, 0);
+}
+
+.slideItemImg {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  width: auto;
+  height: 50%;
+  transform: scale(1.3);
+  margin-top: 20%;
+  transition: 0.3s;
+}
+
+.item2 {
+  z-index: 1;
+  transform: translateX(-90%) scale(0.7) translate3d(240%, -10%, 0);
+}
+
+.item3 {
+  z-index: 0;
+  transform: translateX(-50%) scale(0.4) translate3d(180%, -30%, 0);
+}
+
+.item4 {
+  z-index: 0;
+  transform: translateX(-50%) scale(0.4) translate3d(-180%, -30%, 0);
+}
+
+.item5 {
+  z-index: 1;
+  transform: translateX(-10%) scale(0.7) translate3d(-240%, -10%, 0);
+}
+
+.slideNav {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 10%;
+  top: 75%;
+  border-top: 2px solid var(--green);
+  border-right: 2px solid var(--green);
+  border-bottom: none;
+  border-left: none;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 1;
+}
+.slideNav:hover {
+  width: 20px;
+  height: 20px;
+  border-radius: 30%;
+}
+
+.slideNav.prev {
+  top: 50%;
+  left: 0px;
+  transform: rotate(-135deg);
+}
+
+.slideNav.next {
+  top: 50%;
+  right: 20px;
+  transform: rotate(45deg);
+}
+
+.personnagesChoix {
+  display: grid;
+  align-items: center;
+  background-color: var(--light-color);
+  width: 100%;
+  height: fit-content;
+  margin-top: 10px;
+}
+
+.choixWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px 5px;
+}
+
+.choixCard {
+  position: relative;
+  display: grid;
+  width: 40%;
+  height: 300px;
+  margin: 30px 15px 10px 5px;
+  background: var(--light-color);
+  border-radius: 15px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.5), 5px 5px 5px rgba(0, 0, 0, 0.1),
+    -5px -5px 5px rgba(255, 255, 255, 0.5);
+  z-index: 2;
+}
+
+.cardBox {
+  position: absolute;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  top: 20px;
+  left: 15px;
+  right: 15px;
+  bottom: 20px;
+  background: var(--light-color);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.6s;
+}
+.cardBox:hover {
+  transform: translateY(-40px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.cardBoxContent {
+  padding: 20px;
+  text-align: center;
+}
+
+.cardBoxTitle {
+  font-size: 18px;
+  color: var(--grey);
+}
+
+.cardBoxText {
+  font-size: 14px;
+  color: var(--grey);
+}
+
+.cardBoxBtn {
+  padding: 4px 20px;
+  margin: 5px;
+  color: #fff;
+  background: var(--grey);
+  border: none;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cardBox a {
+  justify-self: center;
+  cursor: pointer;
+}
+
+.cardBox:hover .cardBoxBtn {
+  background: aqua;
+}
+.cardBox:hover .cardBoxTitle {
+  font-size: 20px;
+}
+
+#competences {
+  width: 80%;
+  height: fit-content;
+  padding: 20px;
+  margin-left: 10%;
+  margin-top: 100px;
+}
+
+#kakashi,
+#naruto,
+#sakura,
+#sasuke {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 50px;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.1),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.5), 5px 5px 5px rgba(0, 0, 0, 0.1),
+    -5px -5px 5px rgba(255, 255, 255, 0.5);
+}
+
+.competence.selected {
+  box-shadow: none !important;
+}
+
+.competencesPhoto {
+  width: 200px;
+}
+
+.competencesPhotoImg {
+  width: 100%;
+}
+
+.competencesBtnShow {
+  font-size: 32px;
+  padding: 50px 5px;
+  border-radius: 5px;
+}
+
+.competencesContainer {
+  position: relative;
+  width: 600px;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.competencesCard {
+  position: relative;
+  width: 180px;
+  background: linear-gradient(0deg, #1b1b1b, #222, #1b1b1b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  border-radius: 5px;
+  text-align: center;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.competencesCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+.competencesCard:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.competencesCardBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.competencesBoxPercent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px #000;
+  background: #222;
+  z-index: 99;
+}
+
+.competencesBoxNumber {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.competencesBoxNumber h2 {
+  color: var(--grey);
+  font-weight: 700;
+  font-size: 30px;
+  transition: 0.5s;
+}
+
+.competencesCard:hover .competencesBoxNumber h2 {
+  color: #fff;
+  font-size: 40px;
+}
+
+.competencesBoxNumber h2 span {
+  color: var(--grey);
+  font-size: 24px;
+  transition: 0.5s;
+}
+
+.competencesCard:hover .competencesBoxNumber h2 span {
+  color: #fff;
+}
+
+.competencesText {
+  position: relative;
+  color: var(--grey);
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.competencesCard:hover .competencesText {
+  color: #fff;
+}
+
+.competencesBoxSvg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  z-index: 999;
+}
+
+.competencesBoxSvg circle {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--grey2);
+  stroke-width: 10;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+}
+.competencesBoxSvg circle:nth-child(2) {
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+}
+
+#kakashi .competencesCard:nth-child(1) .competencesBoxSvg circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 88) / 100);
+  stroke: #f11e17;
+}
+#kakashi .competencesCard:nth-child(2) .competencesBoxSvg circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 92) / 100);
+  stroke: #00a1ff;
+}
+#kakashi .competencesCard:nth-child(3) .competencesBoxSvg circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 64) / 100);
+  stroke: #00ff43;
+}
+
+#naruto .competencesCard:nth-child(1) .competencesBoxSvg circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 92) / 100);
+  stroke: #f11e17;
+}
+#naruto .competencesCard:nth-child(2) .competencesBoxSvg circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 84) / 100);
+  stroke: #00a1ff;
+}
+#naruto .competencesCard:nth-child(3) .competencesBoxSvg circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 98) / 100);
+  stroke: #00ff43;
+}
+
+#sakura .competencesCard:nth-child(1) .competencesBoxSvg circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 76) / 100);
+  stroke: #f11e17;
+}
+#sakura .competencesCard:nth-child(2) .competencesBoxSvg circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 82) / 100);
+  stroke: #00a1ff;
+}
+#sakura .competencesCard:nth-child(3) .competencesBoxSvg circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 70) / 100);
+  stroke: #00ff43;
+}
+
+#sasuke .competencesCard:nth-child(1) .competencesBoxSvg circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 94) / 100);
+  stroke: #f11e17;
+}
+#sasuke .competencesCard:nth-child(2) .competencesBoxSvg circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 87) / 100);
+  stroke: #00a1ff;
+}
+#sasuke .competencesCard:nth-child(3) .competencesBoxSvg circle:nth-child(2) {
+  stroke-dashoffset: calc(440 - (440 * 86) / 100);
+  stroke: #00ff43;
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  margin-top: 200px;
+  background: #3586ff;
+  min-height: 10px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(../assets/img/vague.png);
+  background-size: 1000px 100px;
+}
+
+#wave1 {
+  z-index: 100;
+  opacity: 1;
+  bottom: 0;
+  animation: animateVague 4s linear infinite;
+}
+#wave2 {
+  z-index: 99;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animateVague_2 5s linear infinite;
+}
+#wave3 {
+  z-index: 100;
+  opacity: 0.4;
+  bottom: 30px;
+  animation: animateVague 3s linear infinite;
+}
+#wave4 {
+  z-index: 99;
+  opacity: 0.7;
+  bottom: 15px;
+  animation: animateVague_2 4s linear infinite;
+}
+#wave5 {
+  z-index: 100;
+  opacity: 0.6;
+  bottom: 25px;
+  animation: animateVague 2s linear infinite;
+}
+
+@keyframes animateVague {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-position-x: 0;
+  }
+}
+@keyframes animateVague_2 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .slideItems li::after {
+    top: 7%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #acceuil {
+    display: block;
+  }
+  .creationleft {
+    width: 100%;
+    height: fit-content;
+    top: 50px;
+  }
+  .creationright {
+    width: 90%;
+    margin: 20px 5%;
+  }
+  .competencesContainer {
+    display: block;
+    width: 250px;
+  }
+  .competencesCard:hover {
+    transform: translateX(10px);
+  }
+}
