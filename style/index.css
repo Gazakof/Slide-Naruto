@@ -21,8 +21,7 @@
   text-decoration: none;
   outline: none;
   border: none;
-  text-transform: capitalize;
-  transition: all 0.2s linear;
+  transition: all 0.3s linear;
 }
 
 html {
@@ -73,12 +72,12 @@ header ol {
 }
 
 .topbarLink a {
+  font-size: 1.1rem;
   text-decoration: none;
   color: var(--grey2);
 }
 .topbarLink {
   width: fit-content;
-  font-size: 14px;
   font-weight: 500;
   padding: 8px 12px;
   margin-left: 5%;
@@ -312,12 +311,12 @@ header ol {
 
 .cardBoxContent {
   padding: 20px;
-  text-align: center;
 }
 
 .cardBoxTitle {
   font-size: 18px;
   color: var(--grey);
+  text-align: center;
 }
 
 .cardBoxText {
@@ -495,12 +494,15 @@ header ol {
   position: relative;
   width: 150px;
   height: 150px;
-  z-index: 999;
+  z-index: 99;
 }
 
 .competencesBoxSvg circle {
   width: 100%;
   height: 100%;
+  cx: 70px;
+  cy: 70px;
+  r: 70px;
   fill: none;
   stroke: var(--grey2);
   stroke-width: 10;
@@ -659,5 +661,142 @@ header ol {
   }
   .competencesCard:hover {
     transform: translateX(10px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  header {
+    height: 70px;
+  }
+  .navbarLogo {
+    padding: 0.5rem 2rem 0 0.5rem;
+  }
+  .logo {
+    width: 70px;
+    height: 46px;
+  }
+  .topbarLink a {
+    font-size: 0.8rem;
+  }
+
+  .slideItem {
+    width: 20%;
+    height: 44%;
+  }
+  .item1 {
+    scale: 0.9;
+  }
+  .slideNav.next {
+    right: 0px;
+  }
+
+  .choixWrapper {
+    display: block;
+  }
+  .choixCard {
+    width: 80%;
+    margin-left: 10%;
+  }
+  .competencesContainer {
+  }
+  #competences {
+    width: 95%;
+  }
+  .competencesCard {
+    height: 160px;
+  }
+  .competencesBoxPercent {
+    width: 80px;
+    height: 80px;
+    box-shadow: inset 0 0 20px #000;
+  }
+  .competencesBoxNumber h2 {
+    font-weight: 500;
+    font-size: 22px;
+  }
+  .competencesCard:hover .competencesBoxNumber h2 {
+    font-size: 25px;
+  }
+  .competencesBoxNumber h2 span {
+    font-size: 18px;
+  }
+  .competencesText {
+    font-size: 14px;
+  }
+  .competencesBoxSvg {
+    width: 90px;
+    height: 90px;
+  }
+  .competencesBoxSvg circle {
+    cx: 40px;
+    cy: 40px;
+    r: 40px;
+    stroke-width: 6;
+    transform: translate(2px, 2px);
+  }
+  .competencesBoxSvg circle:nth-child(2) {
+    stroke-dasharray: 250;
+    stroke-dashoffset: 250;
+  }
+
+  #kakashi
+    .competencesCard:nth-child(1)
+    .competencesBoxSvg
+    circle:nth-child(2) {
+    stroke-dashoffset: calc(250 - (250 * 88) / 100);
+    stroke: #f11e17;
+  }
+  #kakashi
+    .competencesCard:nth-child(2)
+    .competencesBoxSvg
+    circle:nth-child(2) {
+    stroke-dashoffset: calc(250 - (250 * 92) / 100);
+    stroke: #00a1ff;
+  }
+  #kakashi
+    .competencesCard:nth-child(3)
+    .competencesBoxSvg
+    circle:nth-child(2) {
+    stroke-dashoffset: calc(250 - (250 * 64) / 100);
+    stroke: #00ff43;
+  }
+
+  #naruto .competencesCard:nth-child(1) .competencesBoxSvg circle:nth-child(2) {
+    stroke-dashoffset: calc(250 - (250 * 92) / 100);
+    stroke: #f11e17;
+  }
+  #naruto .competencesCard:nth-child(2) .competencesBoxSvg circle:nth-child(2) {
+    stroke-dashoffset: calc(250 - (250 * 84) / 100);
+    stroke: #00a1ff;
+  }
+  #naruto .competencesCard:nth-child(3) .competencesBoxSvg circle:nth-child(2) {
+    stroke-dashoffset: calc(250 - (250 * 98) / 100);
+    stroke: #00ff43;
+  }
+
+  #sakura .competencesCard:nth-child(1) .competencesBoxSvg circle:nth-child(2) {
+    stroke-dashoffset: calc(250 - (250 * 76) / 100);
+    stroke: #f11e17;
+  }
+  #sakura .competencesCard:nth-child(2) .competencesBoxSvg circle:nth-child(2) {
+    stroke-dashoffset: calc(250 - (250 * 82) / 100);
+    stroke: #00a1ff;
+  }
+  #sakura .competencesCard:nth-child(3) .competencesBoxSvg circle:nth-child(2) {
+    stroke-dashoffset: calc(250 - (250 * 70) / 100);
+    stroke: #00ff43;
+  }
+
+  #sasuke .competencesCard:nth-child(1) .competencesBoxSvg circle:nth-child(2) {
+    stroke-dashoffset: calc(250 - (250 * 94) / 100);
+    stroke: #f11e17;
+  }
+  #sasuke .competencesCard:nth-child(2) .competencesBoxSvg circle:nth-child(2) {
+    stroke-dashoffset: calc(250 - (250 * 87) / 100);
+    stroke: #00a1ff;
+  }
+  #sasuke .competencesCard:nth-child(3) .competencesBoxSvg circle:nth-child(2) {
+    stroke-dashoffset: calc(250 - (250 * 86) / 100);
+    stroke: #00ff43;
   }
 }
